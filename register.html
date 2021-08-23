@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://kit.fontawesome.com/bd2c3c13f6.js" crossorigin="anonymous"></script>
+  <style>
+      #link{
+    text-align: center;
+    font-size:25px;
+    color:#2a2a72;
+}
+
+      *{
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    scroll-behavior: smooth;
+}
+body{
+    place-items: center;
+    background-color: #7ee8fa;
+    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+}
+.Reg{
+    font-size: 3.2em;
+}
+.container{
+    display:grid;
+    grid-column: 10vw 10vw;
+    grid-gap:20px;
+    box-sizing: border-box;
+    padding:10%;
+    place-items: center;
+    justify-content: space-evenly;
+    height:100vh;
+    width:100vw;
+    overflow: hidden;
+}
+form{
+    display: grid;
+    grid-template-columns:repeat(2,20vw) ;
+    grid-gap:2rem;
+    margin: 10% auto;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+}
+form input{
+    border:2px solid blanchedalmond;
+    padding:5px;
+    border-radius: 3px;
+}
+label{
+    padding: 5px;
+    font-size: x-large;
+    color: whitesmoke;
+    width: fit-content;
+    font-size: bolder;
+    border-bottom:5px solid blueviolet ;
+}
+.btn{
+    color: white;
+    border-radius: 6px;
+    align-self: center;
+    height: 100%;
+    padding:6px;
+    font-size: medium;
+    width: fit-content;
+    background-color:black;
+}
+
+button a{
+    color: white;
+    border-radius: 6px;
+    align-self: center;
+    height: 100%;
+    padding:12px;
+    font-size: large;
+    width: fit-content;
+    background-color:black;
+}
+@media (min-width: 240px) and (max-width:1200px){
+    
+    label{
+        padding: 2px;
+        font-size:medium;
+        color: whitesmoke;
+        width: fit-content;
+        font-size: bolder;
+        border-bottom:3px solid blueviolet ;
+
+    }
+    form{
+        display: grid;
+        grid-template-columns:repeat(2,35vw) ;
+        grid-gap:1rem;
+        margin: 10% auto;
+        align-items: center;
+        justify-content: center;
+        color: whitesmoke;
+        height: fit-content;
+        width: 100%;
+        padding: 26px;
+    }
+    form input{
+        border:2px solid blanchedalmond;
+        padding:5px;
+        border-radius: 3px;
+    }
+    .btn{
+        color: white;
+        border-radius: 6px;
+        align-self: center;
+        height: 100%;
+        padding:6px;
+        font-size: medium;
+        width: fit-content;
+        background-color:black;
+    }
+    
+    button a{
+        color: white;
+        border-radius: 6px;
+        align-self: center;
+        height: 100%;
+        padding:12px;
+        font-size: large;
+        width: fit-content;
+        background-color:black;
+    }
+    .container{
+        display:grid;
+        grid-column: 15vw 15vw;
+        grid-gap:20px;
+        box-sizing: border-box;
+        padding:10%;
+        justify-content: space-evenly;
+
+        height:100%;
+        width:100vw;
+        overflow: hidden;
+}
+
+    
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1 class="Reg">Register</h1>
+        
+        <form method="post" autocomplete="off" name="google-sheet">
+           
+         <label for="name">YOUR NAME : </label>   
+        <input type="text" name="Name" class="name"placeholder="First Name" required>
+    
+   
+    
+        
+        <label for="Emali Id">EMAIL : </label>
+        <INPUT TYPE="email" name="E-mail" placeholder="Enter Your Email Id" required></INPUT>
+        <label for="Password">PASSWORD : </label>
+        <INPUT TYPE="Password" name="Password" placeholder="********" required></INPUT>
+        <button class="btn">CONFIRM <i class="far fa-check-circle"></i></button>
+</form>
+<div id="link">
+    <a href="index.html" color="blue">BACK TO HOME PAGE</a>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz4-RwJlon9_HsDl9uaKWHdXv5i8n-ED_1z7vHOPC0nn8UTKOnfZ5vx_MTxFpd74Ug/exec';
+     const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+</script>
+</body>
+</html>
